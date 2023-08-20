@@ -1,21 +1,27 @@
 const axios = require("axios");
 const createError = require("http-errors");
 
+const EXTERNAL_API_BASE_URL = process.env.EXTERNAL_API_BASE_URL;
+
 module.exports = {
+  fetchEndPoint: (identifier) => {
+    return `${EXTERNAL_API_BASE_URL}/${identifier}`;
+  },
+
   fetchData: async (url) => {
     try {
-      const response = await axios.get(url).then((response) => {
-        return response.data;
-      });
-
-      if (!response) {
-        throw createError(404, "Response not avaible.");
-      }
+      const response = await axios
+        .get(url)
+        .then((response) => {
+          return response;
+        })
+        .catch((error) => {
+          return error;
+        });
 
       return response;
     } catch (error) {
-      console.log(error.code)
-      //throw createError(503, "API not working");
+      console.log(error);
     }
   },
 };

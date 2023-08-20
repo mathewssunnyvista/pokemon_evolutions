@@ -1,33 +1,16 @@
-// const fs = require("fs/promises");
 const express = require("express");
-// const cors = require("cors");
-// const _ = require("lodash");
-// const { v4: uuid } = require("uuid");
-const axios = require("axios");
+const createError = require("http-errors");
 const dotenv = require("dotenv").config();
 
 const app = express();
-const EXTERNAL_API_BASE_URL = process.env.EXTERNAL_API_BASE_URL;
-
-// const fetchEvoutionData = async (id) => {
-//   const url = `${EXTERNAL_API_BASE_URL}/evolution-chain/${id}`;
-//   const response = await fetchData(url);
-
-//   return response;
-// };
-
-// app.get(`/evolutionChain1/:id`, async (req, res) => {
-//   const data = await fetchEvoutionData(req.params.id);
-//   res.json(data);
-// });
-
 const Routes = require("./Routes");
+
 app.use("/", Routes);
 
 //404 handler and pass to error handler
-// app.use((req, res, next) => {
-//   next(createError(404, 'Not found'));
-// });
+app.use((req, res, next) => {
+  next(createError(404, "Not found"));
+});
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
