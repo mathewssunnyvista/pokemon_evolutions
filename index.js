@@ -24,6 +24,11 @@ const EXTERNAL_API_BASE_URL = process.env.EXTERNAL_API_BASE_URL;
 const Routes = require("./Routes");
 app.use("/", Routes);
 
+//404 handler and pass to error handler
+// app.use((req, res, next) => {
+//   next(createError(404, 'Not found'));
+// });
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.send({

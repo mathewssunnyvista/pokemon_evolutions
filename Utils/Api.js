@@ -9,10 +9,13 @@ module.exports = {
       });
 
       if (!response) {
-        throw createError(404, "Product does not exist.");
+        throw createError(404, "Response not avaible.");
       }
 
       return response;
-    } catch (error) {}
+    } catch (error) {
+      console.log(error.code)
+      //throw createError(503, "API not working");
+    }
   },
 };
