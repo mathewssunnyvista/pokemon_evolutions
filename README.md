@@ -1,4 +1,4 @@
-# pokemon_evolutions
+# Pokemon-Evolution-Chain-API
 Helps to find the evolution chain and the variations on which a pokemon evolve using the Poke API
 
 <p align="center">
@@ -84,6 +84,13 @@ Start the project:
 npm start
 ```
 
+The projects start in 3000 port and API can be consumed using GET method
+
+```
+<hostName>:3000/evolutionChain/<PokemonName>
+```
+
+This get method will return the evolution chain of provided pokemon.
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
