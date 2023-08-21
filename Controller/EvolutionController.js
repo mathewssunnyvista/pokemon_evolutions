@@ -7,7 +7,7 @@ const dotenv = require("dotenv").config();
 
 module.exports = {
   /**
-   * Function helps to traverse through evolution data 
+   * Function helps to traverse through evolution data
    * This is a recursive function which takes evolution data and traverse till evolve_to reach empty array
    * @param {Array} data
    * @return {Array} chainData
@@ -40,8 +40,10 @@ module.exports = {
       // The pokemon name needs to be used to fetch its species details which will give the evolution chain url.
       const response = await module.exports.getSpecies(req);
 
+      //Handles the data not found when invalid pokemon names are provided.
       if (response.status !== 200) {
-        throw createError(response.response.status, response.message);
+        res.status(204);
+        res.send({ message: response.response.data });
       } else {
         if (response.data) {
           const { evolution_chain } = response.data;
@@ -64,7 +66,7 @@ module.exports = {
    */
   getSpecies: async (req) => {
     try {
-      // Sanitized the user input as the external pokemon api is case sensitive 
+      // Sanitized the user input as the external pokemon api is case sensitive
       const name = module.exports.getSanitized(req.params.name);
       if (!isEmpty(name)) {
         const url = Api.fetchEndPoint(`pokemon-species/${name}`);

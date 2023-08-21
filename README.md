@@ -41,7 +41,7 @@ This is a project provides endpoint for fetching Pokemon Evolution Chain.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -87,26 +87,11 @@ npm start
 The projects start in 3000 port and API can be consumed using GET method
 
 ```
-<hostName>:3000/evolutionChain/<PokemonName>
+<hostName>:3000/pokemon_evolutions/api/v1/evolutionChain/<PokemonName>
 ```
 
 This get method will return the evolution chain of provided pokemon.
 
-## 🚀 Deployment <a name = "deployment"></a>
-
-
-Build the project using : 
-
-```
-npm run build
-```
-
-A 'build' folder will be created in the root and should be used for deployment purposes.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-
-- [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 

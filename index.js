@@ -5,7 +5,7 @@ const dotenv = require("dotenv").config();
 const app = express();
 const Routes = require("./Routes");
 
-app.use("/", Routes);
+app.use("/pokemon_evolutions/api/v1/", Routes);
 
 //404 handler and pass to error handler
 app.use((req, res, next) => {
