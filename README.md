@@ -3,7 +3,7 @@ Helps to find the evolution chain and the variations on which a pokemon evolve u
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="public/favicon.ico" alt="Project logo"></a>
+ <img width=200px height=200px src="/nodejs.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Pokemon-Evolution-API</h3>
