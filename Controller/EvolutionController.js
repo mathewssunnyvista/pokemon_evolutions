@@ -5,25 +5,24 @@ const { isEmpty } = require("lodash");
 
 const dotenv = require("dotenv").config();
 
-const processedData = (data) => {
-  const chainData = {
-    name: data.species.name,
-    variations: [],
-  };
-  if (data?.evolves_to?.length > 0) {
-    data.evolves_to.forEach((evolution) => {
-      const variation = {
-        name: evolution.species.name,
-        variations: processedData(evolution),
-      };
-      chainData.variations.push(variation);
-    });
-  }
-  return chainData.variations;
-};
-
 module.exports = {
-  getEvolution: async (req, res, next) => {
+  processedData: (data) => {
+    const chainData = {
+      name: data.species.name,
+      variations: [],
+    };
+    if (data?.evolves_to?.length > 0) {
+      data.evolves_to.forEach((evolution) => {
+        const variation = {
+          name: evolution.species.name,
+          variations: module.exports.processedData(evolution),
+        };
+        chainData.variations.push(variation);
+      });
+    }
+    return chainData.variations;
+  },
+  getEvolution: async (req, res) => {
     try {
       const response = await module.exports.getSpecies(req);
 
@@ -44,7 +43,7 @@ module.exports = {
     }
   },
 
-  getSpecies: async (req, res, next) => {
+  getSpecies: async (req) => {
     try {
       const name = module.exports.getSanitized(req.params.name);
       if (!isEmpty(name)) {
@@ -69,7 +68,7 @@ module.exports = {
       if (response.status !== 200) {
         throw createError(response.response.status, response.message);
       } else {
-        const evChain = processedData(response.data?.chain);
+        const evChain = module.exports.processedData(response.data?.chain);
         return {
           name: response.data?.chain?.species?.name,
           variations: evChain,
