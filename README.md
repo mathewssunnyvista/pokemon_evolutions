@@ -11,14 +11,13 @@ Helps to find the evolution chain and the variations on which a pokemon evolve u
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/aruvi009/React-BasePack.svg)](https://github.com/aruvi009/React-BasePack/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/aruvi009/React-BasePack.svg)](https://github.com/aruvi009/React-BasePack/pulls)
+[![GitHub Issues](https://img.shields.io/badge/pull%20request-0%20open-green)](https://github.com/mathewssunnyvista/pokemon_evolutions/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/issue-0%20open-green)](https://github.com/mathewssunnyvista/pokemon_evolutions/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
-
 <p align="center"> NodeJs Rest API Project.
     <br> 
 </p>
@@ -95,7 +94,7 @@ This get method will return the evolution chain of provided pokemon.
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@mathewssunnyvista](https://github.com/mathewssunnyvista) - Idea & Initial work
+- [@mathewssunnyvista](https://github.com/mathewssunnyvista) - Initial work
 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
