@@ -24,7 +24,7 @@ jest.mock("../../Utils/Api", () => {
 
 describe("[Controller/EvolutionController]", () => {
   describe("EvolutionController:: processedData", () => {
-    test("Check whether single variations traversal are handled", () => {
+    test("Check whether evolution with single chain - single way traversal are handled", () => {
       const levelOnePokemon = "caterpie";
       const levelTwoPokemon = "metapod";
       const levelThreePokemon = "butterfree";
@@ -67,7 +67,7 @@ describe("[Controller/EvolutionController]", () => {
       );
     });
 
-    test("Check whether multiple variations traversal are handled", () => {
+    test("Check whether evolution with multple chain - multiple variations traversal are handled", () => {
       const levelOnePokemon = "oddish";
       const levelTwoPokemon = "gloom";
       const levelThreePokemon1 = "vileplume";
@@ -122,10 +122,4 @@ describe("[Controller/EvolutionController]", () => {
     });
   });
 
-//   describe("EvolutionController:: getEvolution", () => {
-//     test("Check whether single variations traversal are handled", () => {
-//       const ddd = Api.fetchEndPoint("dd");
-//       expect(ddd).toBe("dd");
-//     });
-//   });
 });

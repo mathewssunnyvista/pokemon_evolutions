@@ -1,5 +1,4 @@
 const axios = require("axios");
-const createError = require("http-errors");
 
 const EXTERNAL_API_BASE_URL = process.env.EXTERNAL_API_BASE_URL;
 

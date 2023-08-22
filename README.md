@@ -27,9 +27,6 @@ Helps to find the evolution chain and the variations on which a pokemon evolve u
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
