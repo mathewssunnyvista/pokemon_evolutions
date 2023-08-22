@@ -40,7 +40,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Node and NPM are required.
+Node (v16.15.1) and NPM (8.11) are required. 
 
 ### Installing
 
